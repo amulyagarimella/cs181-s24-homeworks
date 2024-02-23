@@ -49,7 +49,7 @@ def test_p3_knn(knn_model_1, knn_model_5):
          7.40111111,  8.75471111]])
 
     distances = np.array([[knn_model_1.distance(point, x) for x in knn_model_1.X] for point in points])
-    
+        
     assert np.allclose(knn_soln_distances, distances), f"Failed during distance calculation"
     assert np.allclose(knn_1_soln_preds, knn_1_preds), f"Failed for k = 1 predictions"
     assert np.allclose(knn_5_soln_preds, knn_5_preds), f"Failed for k = 5 predictions"

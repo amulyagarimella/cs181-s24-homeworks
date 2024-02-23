@@ -22,6 +22,7 @@
 \usepackage{bbm}
 \newcommand{\B}{\text{B}}
 \newcommand{\Beta}{\text{Beta}}
+\usepackage{adjustbox}
 
 \usepackage[mmddyyyy,hhmmss]{datetime}
 
@@ -59,7 +60,7 @@ work with this data in Problem 3.
 As a general note, for classification problems we imagine that we have
 the input matrix $\boldX \in \reals^{n \times d}$ (or perhaps they
 have been mapped to some basis $\bm{\Phi}$, without loss of
-generality) with outputs now ``one-hot encoded."  This means that if
+generality) with outputs now ``one-hot encoded.\"  This means that if
 there are~$K$ output classes, rather than representing the output
 label $y$ as an integer~${1,2,\ldots,K}$, we represent $\boldy$ as a
 ``one-hot" vector of length~$K$. A ``one-hot" vector is defined as
@@ -185,7 +186,30 @@ Use the given code to plot the true process versus your learned models. Include 
 
 \end{enumerate}
 \end{framed}
+\newpage
 
+\color{blue}
+\subsection*{Problem 1 Solution}
+\begin{enumerate}
+    \item Completed, see notebook.
+    \item The comparison plots are below:\\
+      \adjustbox{valign=t}{\includegraphics*[scale=0.8]{basis1.png}} \\
+      \includegraphics*[scale=0.8]{basis2.png}\\
+      \includegraphics*[scale=0.8]{basis3.png}\\
+      Looking at the models learned from the displayed dataset, the first model exhibits high bias but low variance, the third model exhibits low bias but high variance, and the second model lands in the middle and, from a visual examination, seems to approximate the ground truth function best. 
+      
+      This pattern holds true for the mean of the learned models as well.
+
+      We observe that as the bias of each model decreases and the variance increases, the fits of the individual functions also seem to exhibit more variance. 
+      
+      The fits of the individual models for basis 1 all fall into a small range of slopes and intercepts (no matter what dataset they were trained on), and the fits for basis 3 differ wildly (depending much more on the datasets they were trained on).
+      
+    \item We know by the Central Limit Theorem that as the sample size of a dataset increases, its variance decreases, so if we were to increase the size of each dataset drawn, we would likely observe that variance would decrease for all models. However, bias is more complex. While the models may predict the value of each parameter with less variance, if the predictor (i.e. basis function) is biased, they will retain bias. TODO experiment 
+    
+    \item TODO 
+    \item TODO 
+\end{enumerate}
+\color{black}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Problem 2
@@ -263,6 +287,20 @@ $\boldX^{-\top} := (\boldX^{\top})^{-1}$
  \end{align*}
  \end{problem}
 
+\newpage
+
+\color{blue}
+\subsection*{Problem 2 Solution}
+\begin{enumerate}
+    \item TODO
+    \item TODO
+    \item TODO
+    \item TODO 
+    \item TODO 
+    \item TODO 
+\end{enumerate}
+\color{black}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Problem 3
@@ -319,6 +357,20 @@ After implementing the above classifiers, complete the following exercises:
 \end{enumerate}
 \end{problem}
 
+\newpage
+
+\color{blue}
+\subsection*{Problem 3 Solution}
+\begin{enumerate}
+    \item TODO
+    \item TODO
+    \item TODO
+    \item TODO 
+    \item TODO 
+\end{enumerate}
+\color{black}
+\pagebreak
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Name and Calibration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -327,5 +379,8 @@ After implementing the above classifiers, complete the following exercises:
 \subsection*{Collaborators and Resources}
 Whom did you work with, and did you use any resources beyond cs181-textbook and your notes?
 
-
+Karen Song\\
+https://onlinelibrary.wiley.com/doi/pdf/10.1002/0471705195.app3\\
+https://math.stackexchange.com/questions/3270789/partial-derivative-of-a-dot-product-with-respect-to-one-of-its-vectors\\
+https://stackoverflow.com/questions/29831489/convert-array-of-indices-to-one-hot-encoded-array-in-numpy\\
 \end{document}
